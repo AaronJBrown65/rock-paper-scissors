@@ -1,0 +1,103 @@
+<script>
+
+    playerPoints = 0
+    computerPoints = 0
+
+    function computerPlay(playerSelection, computerSelection) {
+   
+        choices = ["Rock", "Paper", "Scissors"]
+        const randomChoice = choices[Math.floor(Math.random() * choices.length)]
+
+        playerSelection = window.prompt("Enter your selection: ")
+        computerSelection = randomChoice
+        
+
+        if(playerSelection == "Rock") {
+            document.write("<br>")
+            document.write("You chose " + playerSelection + " and the computer chose " + computerSelection + ".")
+            if(computerSelection == "Paper") {
+                document.write("<br>")
+                document.write("You lose!")
+                document.write("<br>")
+                ++computerPoints
+            }
+            else if(playerSelection == "Rock" && computerSelection == "Rock") {
+                document.write("<br>")
+                document.write("It's a tie! Go again!")
+                document.write("<br>")
+            }
+            else if (playerSelection == "Rock" && computerSelection == "Scissors") {
+                document.write("<br>")
+                document.write("You win!")
+                document.write("<br>")
+                ++playerPoints
+            }
+        }
+        if(playerSelection == "Paper") {
+            document.write("<br>")
+            document.write("You chose " + playerSelection + " and the computer chose " + computerSelection + ".")
+            if(computerSelection == "Scissors") {
+                document.write("<br>")
+                document.write("You lose!")
+                document.write("<br>")
+                ++computerPoints
+            }
+            else if(playerSelection == "Paper" && computerSelection == "Paper") {
+                document.write("<br>")
+                document.write("It's a tie! Go again!")
+                document.write("<br>")
+            }
+            else if(playerSelection == "Paper" && computerSelection == "Rock") {
+                document.write("<br>")
+                document.write("You win!")
+                document.write("<br>")
+                ++playerPoints
+            }
+        }    
+        if(playerSelection == "Scissors") {
+            document.write("<br>")
+            document.write("You chose " + playerSelection + " and the computer chose " + computerSelection + ".")
+            if(computerSelection == "Rock") {
+                document.write("<br>")
+                document.write("You lose!")
+                document.write("<br>")
+                ++computerPoints
+            }
+            else if(playerSelection == "Scissors" && computerSelection == "Scissors") {
+                document.write("<br>")
+                document.write("It's a tie! Go again!")
+                document.write("<br>")
+            }
+            else if(playerSelection == "Scissors" && computerSelection == "Paper") {
+                document.write("<br>")
+                document.write("You win!")
+                document.write("<br>")
+                ++playerPoints
+            }
+        }
+            
+    }
+     
+    
+    function game() {
+        let i = 0
+        while(i<5) {
+            computerPlay()
+            ++i
+        }
+        if(playerPoints > computerPoints) {
+            document.write("<br>")
+            document.write("You win the game with a final score of " + playerPoints + " - " + computerPoints + "!")
+        }
+        else 
+            document.write("<br>")
+            document.write("You lose the game with a final score of " + playerPoints + " - " + computerPoints + "!")
+    }
+
+    
+
+    
+    
+
+
+</script>
